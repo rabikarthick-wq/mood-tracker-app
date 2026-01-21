@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mood Tracker</h1>
+            <p>How are you feeling today?</p>
+        </header>
+
+        <main>
+            <section class="card mood-input-section" aria-labelledby="input-heading">
+                <h2 id="input-heading">Track Your Mood</h2>
+                <div class="mood-options" role="radiogroup" aria-label="Select your mood">
+                    <button class="mood-btn" data-mood="excited" role="radio" aria-checked="false" aria-label="Excited" title="Excited">
+                        <span class="emoji" aria-hidden="true">🎉</span>
+                        <span class="label">Excited</span>
+                    </button>
+                    <button class="mood-btn" data-mood="happy" role="radio" aria-checked="false" aria-label="Happy" title="Happy">
+                        <span class="emoji" aria-hidden="true">😊</span>
+                        <span class="label">Happy</span>
+                    </button>
+                    <button class="mood-btn" data-mood="neutral" role="radio" aria-checked="false" aria-label="Neutral" title="Neutral">
+                        <span class="emoji" aria-hidden="true">😐</span>
+                        <span class="label">Neutral</span>
+                    </button>
+                    <button class="mood-btn" data-mood="tired" role="radio" aria-checked="false" aria-label="Tired" title="Tired">
+                        <span class="emoji" aria-hidden="true">😴</span>
+                        <span class="label">Tired</span>
+                    </button>
+                    <button class="mood-btn" data-mood="sad" role="radio" aria-checked="false" aria-label="Sad" title="Sad">
+                        <span class="emoji" aria-hidden="true">😢</span>
+                        <span class="label">Sad</span>
+                    </button>
+                </div>
+                
+                <div class="note-input-container">
+                    <label for="mood-note">Add a note (optional):</label>
+                    <textarea id="mood-note" placeholder="What's on your mind?"></textarea>
+                </div>
+
+                <button id="save-mood" class="primary-btn">Save Entry</button>
+            </section>
+
+            <section class="card chart-section" aria-labelledby="chart-heading">
+                <h2 id="chart-heading">Weekly Summary</h2>
+                <div id="mood-chart" class="chart-container" aria-label="Weekly mood summary chart">
+                    <!-- Chart bars will be injected here by JS -->
+                </div>
+            </section>
+
+            <section class="card history-section" aria-labelledby="history-heading">
+                <h2 id="history-heading">Recent Entries</h2>
+                <div id="entries-list" class="entries-list" aria-live="polite">
+                    <!-- Entries will be injected here by JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <canvas id="confetti-canvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
